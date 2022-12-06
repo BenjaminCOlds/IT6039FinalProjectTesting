@@ -13,7 +13,7 @@ class BowlingGame:
         rollIndex=0
         for frameIndex in range(10):
             if frameIndex in range(10):
-                result += self.StrikeScore(rollIndex)
+                result += self.strikeScore(rollIndex)
                 rollIndex +=1
             elif self.isSpare(rollIndex):
                 result += self.spareScore(rollIndex)
@@ -27,7 +27,7 @@ class BowlingGame:
         return self.rolls[rollIndex] == 10
     def isSpare(self, rollIndex):
         return self.rolls[rollIndex]+ self.rolls[rollIndex+1]==10
-    def stickeScore(self,rollIndex):
+    def strikeScore(self,rollIndex):
         return  10+ self.rolls[rollIndex+1]+ self.rolls[rollIndex+2]
 
     def spareScore(self,rollIndex):
@@ -45,3 +45,13 @@ class BowlingGame:
 
 ###### Important #####
 # Please complete your project and all tasks according to assessment description provided in CANVAS.
+"""
+    This is used as some generic testing throughout refactoring and debuggingand will be removed later once unit testing is done.
+"""
+game = BowlingGame()
+game.roll(4)
+game.roll(1)
+game.roll(3)
+game.roll(9)
+print(game.rolls)
+print(game.score())
