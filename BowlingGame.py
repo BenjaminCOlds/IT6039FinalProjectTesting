@@ -1,14 +1,25 @@
-#File 2 (BowlingGame.py)
-#This file has information about Bowling Game for which the description is provided in project assessment.
-
 class BowlingGame:
+    """
+        BowlingGame is a game designed for high school age students. The game is a 10pin bowling game prototype that will be used to teach a variety of subjects. 
+    """
     def __init__(self):
+        """
+            Constructor for BowlingGame, when a game is initalized it will construct an empty list that will be utilised throughout the project.
+        """
         self.rolls=[]
 
     def roll(self,pins):
+        """
+            Rolls a ball and adds the value onto self.rolls. 
+        """
         self.rolls.append(pins)
 
     def score(self):
+        """
+            Used to calculate the total score of rolls. 
+            
+            Returns the total result. 
+        """
         result = 0
         rollIndex=0
         for frameIndex in range(10):
@@ -24,34 +35,29 @@ class BowlingGame:
             return result
 
     def isStrike(self, rollIndex):
+        """
+            Used to figure out if a hit was a strike or not. 
+        """
         return self.rolls[rollIndex] == 10
     def isSpare(self, rollIndex):
+        """
+            Used to figure out if two balls were a spare.
+        """
         return self.rolls[rollIndex]+ self.rolls[rollIndex+1]==10
     def strikeScore(self,rollIndex):
+        """
+            Calculates and returns the strike score. 
+        """
         return  10+ self.rolls[rollIndex+1]+ self.rolls[rollIndex+2]
 
     def spareScore(self,rollIndex):
+        """
+            Calculates and returns the spare score. 
+        """
         return  10+ self.rolls[rollIndex+2]
 
     def frameScore(self, rollIndex):
+        """
+            Calculates what the frame score is. 
+        """
         return self.rolls[rollIndex] + self.rolls[rollIndex + 1]
-		
-
-#Your tasks for code parts:
-#1: If there are any bugs in the code, you have to remove using debugging and run the project and test cases.
-#2: Refactor the code (Improve its structure without changing external behaviour).
-#3: Report everything using github commits and versioning control.
-
-
-###### Important #####
-# Please complete your project and all tasks according to assessment description provided in CANVAS.
-"""
-    This is used as some generic testing throughout refactoring and debuggingand will be removed later once unit testing is done.
-"""
-game = BowlingGame()
-game.roll(4)
-game.roll(1)
-game.roll(3)
-game.roll(9)
-print(game.rolls)
-print(game.score())
