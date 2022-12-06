@@ -37,3 +37,6 @@ class TestBowlingGame(unittest.TestCase):
     def rollMany(self, pins,rolls):
         for i in range(rolls):
             self.game.rolls(pins)
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
