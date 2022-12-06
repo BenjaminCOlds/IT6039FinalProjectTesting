@@ -60,7 +60,7 @@ class TestBowlingGame(unittest.TestCase):
 
         assert self.game.score()==300
 
-    def testOneSpare(self):
+    def testSecondSpare(self):
         """
             Rolls many balls and tests for spares. 
         """
